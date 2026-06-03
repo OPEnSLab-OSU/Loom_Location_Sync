@@ -18,8 +18,8 @@ source .venv/bin/activate
 # install the requiremnts in the local repo
 python -m pip install -r requirements.txt
 # change permissions for bash script to be ran as an executable
-chmod +x script.sh
+chmod +x job_script.sh
 
 echo "Please import config file, either by creating one or using scp from another device with the file."
-echo "Please set up crontab with 0 0,12 * * * $PROJECT_DIR/script.sh >> $PROJECT_DIR/cron.log 2>&1"
+echo "Please set up crontab with 0 0,12 * * * $PROJECT_DIR/job_script.sh >> $PROJECT_DIR/cron.log 2>&1"
 
