@@ -4,4 +4,5 @@ src/__pycache__/
 src/main.py
 cron.log
 script_output.txt
+webapp/__pychache__/
 

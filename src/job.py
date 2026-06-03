@@ -20,7 +20,7 @@ uri = config.test_mongo_uri
 client = MongoClient(uri)
 
 
-try:
+def update_locations():
     #Hologram
 
     #encode credentials using base64
@@ -48,8 +48,7 @@ try:
         if device["latitude"] and device["longitude"]:
             clean_devices.append(device)
     
-    db = client.get_database("Device_Test")
-    collection = db.get_collection("Device_Test")
+    collection = client.get_collection("Device_Test")
 
     #turn database into lookup table
     mongo_locations = {}

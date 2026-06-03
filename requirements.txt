@@ -2,3 +2,6 @@ pymongo
 requests
 python-dotenv
 geopy
+flask
+flask-pymongo
+folium
