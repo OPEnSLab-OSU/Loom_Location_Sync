@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="container">
+    
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/devices">Devices</a>
+        <a href="/update">Update</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <div>
+            <h1>Device Location History</h1>
+            <div class="subtitle">Past Locations for {{ device.name }}</div>
+        </div>
+    </header>
+
+    <!-- TABLE -->
+    <div class="card">
+        <table>
+            <tr>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Timestamp (UTC)</th>
+            </tr>
+
+            {% for location in history %}
+            <tr>
+                <td>{{ location.latitude }}</td>
+                <td>{{ location.longitude }}</td>
+                <td>{{ location.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>

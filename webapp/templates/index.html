@@ -1,5 +1,14 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <div class="container">
 
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/devices">Devices</a>
+        <a href="/update">Update</a>
+    </nav>
+
+    <!-- HEADER -->
     <header>
         <div>
             <h1>Device Tracking Dashboard</h1>
@@ -7,6 +16,7 @@
         </div>
     </header>
 
+    <!-- STATS -->
     <div class="grid">
         <div class="card">
             <h3>Total Devices</h3>
@@ -15,10 +25,11 @@
 
         <div class="card">
             <h3>Updated</h3>
-            <p>{{ updated_count }}</p>
+            <p>{{ updated_devices }}</p>
         </div>
     </div>
 
+    <!-- MAP -->
     <div class="map-container">
         {{ map_html|safe }}
     </div>

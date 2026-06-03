@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="container">
+
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/devices">Devices</a>
+        <a href="/update">Update</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <div>
+            <h1>Device Data</h1>
+            <div class="subtitle">Raw MongoDB Device List</div>
+        </div>
+    </header>
+
+    <!-- TABLE -->
+    <div class="card">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Last Updated (UTC)</th>
+                <th>Actions</th>
+                <th>Past Locations</th>
+                <th>History</th>
+            </tr>
+
+            {% for device in devices %}
+            <tr>
+                <td>{{ device.name }}</td>
+                <td>{{ device.latitude }}</td>
+                <td>{{ device.longitude }}</td>
+                <td>{{ device["Last Updated (UTC)"] }}</td>
+                <td>
+                <a href="/edit/{{ device.deviceid }}" class="btn">
+                Edit Location
+                </a>
+                </td>
+                <td>
+                    {% if device["Previous Locations"] %}
+                        {{ device["Previous Locations"]|length }}
+                    {% else %}
+                        0
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="/history/{{ device.deviceid }}" class="btn">
+                       View History
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
