@@ -32,7 +32,7 @@ org_id = ""
 hologram_api_key = ""
 credentials = f"apikey:{hologram_api_key}"
 loom_mongo_uri = ""
-hologram_url_location = f"https://dashboard.hologram.io/api/a/devices/locations?orgid={org_id}"
+hologram_url_location = f"https://dashboard.hologram.io/api/1/devices/locations?orgid={org_id}"
 ```
 ## 3. Make the install script executable
 
