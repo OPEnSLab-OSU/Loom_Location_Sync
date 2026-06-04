@@ -1,3 +1,6 @@
+# Under Construction
+Currently, this README is out of date. It will be updated shortly
+
 # About
 Tracks and synchronizes IoT device locations in real time, leveraging Hologram’s REST API with MongoDB as a location cache for persistent storage and fast retrieval.
 # Setup and Installation
